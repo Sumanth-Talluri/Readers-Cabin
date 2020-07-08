@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <!-- Jumbotron -->
+    <!-- Jumbotron -->
+<div class="jumbotron text-center">
+
+    <!-- Title -->
+    <h2 class="card-title h2">DASHBOARD</h2>
+    <!-- Subtitle -->
+    <p class="blue-text my-4 font-weight-bold">Here you will find your accout info and your reviews.</p>
+  
+    <!-- Grid row -->
+    <div class="row d-flex justify-content-center">
+  
+      <!-- Grid column -->
+      <div class="col-xl-7 pb-2">
+
+        <!-- profile content -->
+       
+        <div class="container mt-5">
+
+
+          <!--Section: Content-->
+          <section class="text-center dark-grey-text">
+        
+            <div class="wrapper-carousel-fix">
+              <!-- Carousel Wrapper -->
+              <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel"
+                data-interval="false">
+                <!--Slides-->
+                <div class="carousel-inner" role="listbox">
+                  <!--First slide-->
+                  <div class="carousel-item active">
+                    <div class="testimonial">
+                      <!--Avatar-->
+                      <div class="avatar mx-auto mb-4">
+                        <img src="../static/img/dashboardpic.svg" style="width: 50%;" class="rounded-circle img-fluid"
+                          alt="First sample avatar image">
+                      </div>
+                      
+                      <h4 class="font-weight-bold">{{username}}</h4>
+                      <h6 class="font-weight-bold my-3">{{email}}</h6>
+                    </div>
+                  </div>
+                  <!--First slide-->
+
+                </div>
+                
+              </div>
+              <!-- Carousel Wrapper -->
+            </div>
+        
+          </section>
+          <!--Section: Content-->
+        
+        
+        </div>
+
+        <!-- end profile content -->
+      </div>
+      <!-- Grid column -->
+  
+    </div>
+    <!-- Grid row -->
+  
+    <hr class="my-4">
+    <br>
+    <h4 class="card-title">YOUR REVIEWS</h4>
+    {% if reviewsfound %}
+    {% for review in reviews %}
+    <!-- Grid row -->
+    <br> <br>
+    <div class="card text-left">
+      <a href="{{url_for('book', isbn = review[3])}}"><h5 class="card-header h5">ISBN : {{review[3]}}</h5></a>
+      <div class="card-body">
+        <h5 class="card-title">Rating : {{review[1]}}</h5>
+        <p class="lead">{{review[2] | safe}}</p>
+        <p class="card-text">{{review[4].strftime("%d %B %Y")}}</p>
+      </div>
+    </div> 
+    {% endfor %}
+    {% else %}
+    <div class="text-center">
+      <!-- Text -->
+      <br> <br> 
+      <p class="lead">No Reviews Found</p> 
+    </div>
+    {% endif %}
+  
+  </div>
+  <!-- Jumbotron -->
+  <!-- End Jumbotron -->
+{% endblock %}

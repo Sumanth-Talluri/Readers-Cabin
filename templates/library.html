@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <!-- Jumbotron -->
+    <div class="jumbotron p-0">
+  
+      <!-- Card content -->
+      <div class="card-body text-center mb-3">
+
+        <!-- Title -->
+        <h3 class="card-title h3 my-4"><strong>LIBRARY</strong></h3>
+
+        <!-- Card image -->
+        <!-- Grid row -->
+        <br> <br>
+        <div class="row d-flex justify-content-center">
+      
+          <!-- Grid column -->
+          <div class="col-xl-7 pb-2">
+              <img src="../static/img/librarypic.svg" alt="" style="height: 350px;" class="embed-responsive"> <br> <br> <br> 
+          </div>
+        </div>
+        
+        <!-- Text -->
+        <p class="card-text py-2">Want some inspiration for which book to read next ? <br> <br> Look no further, we've got you covered. </p>
+        <!-- Button -->
+        <a href="#search" class="btn purple-gradient btn-rounded mb-4">EXPLORE</a>
+      </div>
+    </div>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron p-0" id="search">
+      <div class="container">
+        <div class="text-center">
+          <!-- Title -->
+          <br>
+          <h3 class="card-title h3 my-4"><strong>SEARCH</strong></h3> <br>
+        </div>
+
+        <!-- form -->
+        <div class="text-left">
+          <form action="" method="POST">
+            <div class="form-group">
+              <label for="sel1">Search By :</label>
+              <select class="form-control" name="searchby" required>
+                <option value="">Please Choose an option </option>
+                <option value="isbn">ISBN</option>
+                <option value="title">Title</option>
+                <option value="author">Author</option>
+                <option value="year">Year</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Keyword :</label>
+              <input type="text" name="keyword" class="form-control" required="required">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+        </div>
+      </div>
+      <br> <br> 
+      {% if notFound%}
+      <div class="text-center">
+        <!-- Text -->
+        <p class="card-text py-2">No Books Found</p> <br> <br>
+      </div>
+      {% endif %}
+      {% if tablePrint %}
+      <div class="text-center">
+        <!-- Text -->
+        <p class="card-text py-2">To Know more about the book Click on the <strong>ISBN</strong> number of that book.</p> <br>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped text-center">
+          <thead class="black white-text text-center">
+            <tr>
+              <th scope="col">ISBN</th>
+              <th scope="col">TITLE</th>
+              <th scope="col">AUTHOR</th>
+              <th scope="col">YEAR</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for record in records %}
+              <tr>
+                <td><a href="{{url_for('book', isbn = record[1] )}}">{{record[1]}}</a></td>
+                <td>{{record[2]}}</td>
+                <td>{{record[3]}}</td>
+                <td>{{record[4]}}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock %}

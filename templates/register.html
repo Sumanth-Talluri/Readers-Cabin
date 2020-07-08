@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <!-- Jumbotron -->
+    <div class="jumbotron text-center r mdb-color lighten-3 white-text mx-2 mb-5">
+
+        <!-- Title -->
+        <br><h1><strong>REGISTER</strong></h1> <br> <br>
+
+        <!-- Grid row -->
+        <div class="row d-flex justify-content-center">
+    
+            <!-- Grid column -->
+            <div class="col-xl-7 pb-2">
+                <img src="../static/img/registerimg.svg" alt="" style="height: 350px;" class="embed-responsive"> <br> <br> <br> 
+            </div>
+
+        </div>
+
+        <hr class="my-4 rgba-white-light">
+
+        <!-- Grid row -->
+        <div class="text-left">
+            {% from "includes/_formhelpers.html" import render_field %}
+            <form action="" method="POST">
+                <div class="form-group">
+                    {{render_field(form.name, class="form-control")}}
+                </div>
+                <div class="form-group">
+                    {{render_field(form.email, class="form-control")}}
+                </div>
+                <div class="form-group">
+                    {{render_field(form.username, class="form-control")}}
+                </div>
+                <div class="form-group">
+                    {{render_field(form.password, class="form-control")}}
+                </div>
+                <div class="form-group">
+                    {{render_field(form.confirm, class="form-control")}}
+                </div>
+                <p><input type="submit" value="submit" class="btn btn-primary"></p>
+            </form>
+        </div>
+
+  </div>
+  <!-- End Jumbotron -->
+
+{% endblock %}

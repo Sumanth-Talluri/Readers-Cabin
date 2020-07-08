@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="jumbotron text-center blue-grey lighten-5">
+
+        <!-- Title -->
+        <h2 class="card-title h2">CONTACT ME</h2>
+    
+    
+        <!-- Grid row -->
+        <div class="row d-flex justify-content-center">
+    
+            <!-- Grid column -->
+            <div class="col-xl-7 pb-2">
+                <img src="../static/img/contactimg.svg" alt="" style="height: 350px;" class="embed-responsive"> <br> <br> <br> 
+            </div>
+    
+        </div>
+
+        <hr class="my-4 pb-2">
+
+        <!-- Grid row -->
+        <div class="text-left">
+            {% from "includes/_formhelpers.html" import render_field %}
+            <form action="" method="POST">
+                <div class="form-group">
+                    {{render_field(form.username, class="form-control")}}
+                </div>
+                <div class="form-group">
+                    {{render_field(form.email, class="form-control")}}
+                </div>
+                <div class="form-group">
+                    {{render_field(form.body, class="form-control", id="editor")}}
+                </div>
+                <p><input type="submit" value="submit" class="btn btn-primary"></p>
+            </form>
+        </div>
+  </div>
+{% endblock %}

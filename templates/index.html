@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="jumbotron text-center">
+        <h1><strong>Welcome!</strong></h1>
+        <h1>TO READER's CABIN</h1> <br>
+        <br> <br>
+        <img src="../static/img/read.svg" alt="" style="height: 350px;" class="embed-responsive"> <br> <br> <br> 
+        <p class="lead" align="justify">Nobody likes to spend money on a new book only to face that overwhelming feeling of disappointment when it doesn’t live up to your expectations. The solution is to check out the book reviews here before you hit the shops. The greater the diversity of opinions you can gather, the more confidence you can have that you’ll enjoy the title.</p>  
+        <p class="lead" align="justify">Our mission is to share book love and encourage reading for pleasure by offering the tools, advice and information needed to help our users find their next favourite book.</p>
+        <p class="lead" align="justify">You can participate in the community by adding your own rankings to books you’ve read and leaving reviews for other people to check out.</p>
+        <br>
+        
+        
+        {% if session.logged_in == NULL %}
+            <a href="/register" class="btn btn-primary btn-lg">Register</a>
+            <a href="/login" class="btn btn-success btn-lg">Login</a>
+        {% else %}
+            <a href="/library" class="btn btn-primary btn-lg">Get Started</a>
+            <a href="/contact" class="btn btn-success btn-lg">Contact Me</a>
+        {% endif %}
+    </div>
+{% endblock %}

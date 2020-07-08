@@ -1,0 +1,17 @@
+ <!-- these are used when we are redirecting and want to flash a message -->
+ {% with messages = get_flashed_messages(with_categories=true) %}
+ {% if messages %}
+   {% for category, message in messages %}
+     <div class="alert alert-{{ category }}">{{ message }}</div>
+   {% endfor %}
+ {% endif %}
+{% endwith %}
+
+<!-- these are used when we want to flash in the same page -->
+{% if error %}
+   <div class="alert alert-danger">{{error}}</div>
+{% endif %}
+
+{% if msg %}
+   <div class="alert alert-success">{{msg}}</div>
+{% endif %}

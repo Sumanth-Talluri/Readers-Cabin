@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <!-- Displaying book details -->
+    <div class="jumbotron">
+      <h2 class="display-5 text-center" style="text-transform: uppercase;"><strong>{{title}}</strong> </h2> <br>
+      <p class="lead"> <strong>Author</strong> : {{author}} <br> <strong>Publication Year</strong>  : {{year}} <br> <strong>ISBN</strong> : {{isbn}} <br> <strong>Total Ratings</strong> : {{ratings_count}} <br> <strong>Average Rating</strong> : {{average_rating}}</p>
+      <hr class="my-4">
+      <p class="text-center">If you want the JSON format of this book then you can click here or you go to /api/isbnNumber if you want data of a different book </p>
+      <div class="pt-2 text-center">
+        <a href="/api/{{isbn}}"><button type="button" class="btn btn-blue waves-effect">View JSON</button></a> 
+      </div>
+    </div>
+    <!-- End details of book -->
+
+    <!-- Displaying Reviews from db -->
+<div class="jumbotron text-center">
+
+  <!-- Title -->
+  <h2 class="card-title h2">REVIEWS</h2>
+  <!-- Subtitle -->
+  <p class="lead my-4">These are the reviews left by other readers in the Reader's Cabin.</p>
+
+  {% if reviewsfound %}
+  {% for review in reviews %}
+  <br>
+  <!-- Grid row -->
+  <div class="card text-left">
+    <h5 class="card-header h5">{{review[0]}}</h5>
+    <div class="card-body">
+      <h5 class="card-title">Rating : {{review[1]}}</h5>
+      <p class="lead">{{review[2] | safe}}</p>
+      <p class="card-text">{{review[4].strftime("%d %B %Y")}}</p>
+    </div>
+  </div>
+  {% endfor %}
+  {% else %}
+  <div class="text-center">
+    <!-- Text -->
+    <br> <br> 
+    <p class="lead">No Reviews Found</p> 
+  </div>
+  {% endif %}
+</div>
+
+<!-- End displaying reviews -->
+
+    <!-- Add book reviews  -->
+    <div class="jumbotron text-center blue-grey lighten-5" id="addreview">
+      <!-- Title -->
+      <h2 class="card-title h2">ADD YOUR REVIEW</h2>
+      <p class="lead my-4">On Reader's Cabin, you can write reviews for books you’ve read. These reviews and opinions are voluntary.</p>
+      <br>
+      <!-- Grid row -->
+      <div class="row d-flex justify-content-center">
+          <!-- Grid column -->
+          <div class="col-xl-7 pb-2">
+              <img src="../static/img/addreviewpic.svg" alt="" style="height: 350px;" class="embed-responsive"> <br>  
+          </div>
+      </div>
+      <hr class="my-4 pb-2">
+      <!-- Grid row -->
+      <div class="text-left">
+          {% from "includes/_formhelpers.html" import render_field %}
+          <form action="" method="POST">
+              <div class="form-group">
+                <label for="sel1"><strong>Rate this book out of 5</strong> </label>
+                <select class="form-control" name="rating" required>
+                  <option value="">Please Choose an option </option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label><strong>Review</strong></label>
+                <textarea name="comment" id="editor" cols="30" rows="10"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+      </div>
+    </div>
+    <!-- End add reviews -->
+
+{% endblock %}

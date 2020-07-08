@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="icon" 
+            type="image/png" 
+            href="../static/img/favicon.png" />
+        <title>Reader's Cabin</title>
+    </head>
+    <body>
+        {% include "includes/_navbar.html" %}
+
+        <div class="container styleit">
+            {% include 'includes/_messages.html' %}
+            {% block body %} {% endblock %}
+        </div>
+
+        <!-- Footer -->
+        <footer class="page-footer font-weight-bolder special-color-dark pt-4">
+
+            <!-- Footer Elements -->
+            <div class="container" >
+        
+            <!-- Social buttons -->
+            <ul class="list-unstyled list-inline text-center">
+                <li class="list-inline-item">
+                    <!--Facebook-->
+                    <a class="btn-floating btn-lg btn-fb" type="button" role="button" href="https://www.facebook.com/smarty.saisumanth" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <!--Twitter-->
+                    <a class="btn-floating btn-lg btn-tw" type="button" role="button" href="https://twitter.com/sumanth_98?s=09" target="_blank"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <!--Linkedin-->
+                    <a class="btn-floating btn-lg btn-li" type="button" role="button" href="https://www.linkedin.com/in/sai-sumanth-talluri-3b7811141" target="_blank"><i class="fab fa-linkedin-in" ></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <!-- Insta -->
+                    <a class="btn-floating btn-lg btn-ins" type="button" role="button" href="https://instagram.com/the.cs.geek?igshid=1mamru7aa53b2" target="_blank"><i class="fab fa-instagram" ></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <!--Github-->
+                    <a class="btn-floating btn-lg btn-git" type="button" role="button" href="https://github.com/Sumanth-Talluri" target="_blank"><i class="fab fa-github" ></i></a>
+                </li>
+            </ul>
+            <!-- Social buttons -->
+        
+            </div>
+            <!-- Footer Elements -->
+        
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">Developed with <i class="fa fa-heart" style="color: red; padding: 0 5px;" aria-hidden="true"></i> by
+            <a href="https://mdbootstrap.com/"> SUMANTH</a>
+            </div>
+            <!-- Copyright -->
+        
+                </footer>
+        <!-- Footer -->
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+
+        <!-- The below cdn is for CKeditor which is used in add_article.html  -->
+        <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+        <script type="text/javascript">
+            CKEDITOR.replace('editor')
+        </script>
+    </body>
+</html>
