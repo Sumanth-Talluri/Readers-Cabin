@@ -37,26 +37,26 @@ Varialbe value will be: "...your database uri ...", example: postgres://username
 
 ## Files
 
-### app.py
+#### app.py
 
 This file contains the backend of the website.
 
-### send_mail.py
+#### send_mail.py
 This file is used to connect to mailtrap.io for the contact information.
 
-### import.py
+#### import.py
 
 This file contains the code to insert the books from the CSV file to the database.
 
-### requirements.txt
+#### requirements.txt
 
 This file contains all the packages necessary to run this project.
 
-### Templates Folder
+#### Templates Folder
 
 This folder contains all the HTML files.
 
-### Static Folder
+#### Static Folder
 
 This folder contains the css and img folders.
 
