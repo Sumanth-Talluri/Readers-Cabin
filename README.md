@@ -76,3 +76,17 @@ This folder contains the css and img folders.
 ## API
 
 Goodreads api is used in this website to access the review data for individual books.
+
+<br>
+
+### Contribute
+
+Contributions are always welcome! Please create a PR to add Github Profile.
+
+### :pencil: License
+
+This project is licensed under [MIT](https://opensource.org/licenses/MIT) license.
+
+### :man_astronaut: Show your support
+
+Give a ⭐️ if this project helped you!
