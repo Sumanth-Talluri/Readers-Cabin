@@ -81,7 +81,7 @@ Goodreads api is used in this website to access the review data for individual b
 
 ### Contribute
 
-Contributions are always welcome! Please create a PR to add Github Profile.
+Contributions are always welcome! Please create a PR to contribute.
 
 ### :pencil: License
 
