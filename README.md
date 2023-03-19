@@ -1,7 +1,5 @@
 # Reader's Cabin
 
-## Visit the website : https://readerscabin.herokuapp.com/
-
 Reader's Cabin is a book review website in which users will be able to search for books, leave reviews for individual books and see ratings of books from a broader audience. but first user must register and login in order to access the library.
 For developers, reader's cabin has a feature to let users query for book details and book reviews programmatically via my website's API.
 
